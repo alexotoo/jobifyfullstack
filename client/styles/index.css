@@ -1,0 +1,16 @@
+.icons {
+  font-size: 1.5rem;
+  display: inline;
+  margin: 0 1.5rem 0 1.5rem;
+}
+.shd {
+  box-shadow: 9px 10px 15px -7px rgba(153, 153, 153, 0.75);
+  -webkit-box-shadow: 9px 10px 15px -7px rgba(153, 153, 153, 0.75);
+  -moz-box-shadow: 9px 10px 15px -7px rgba(153, 153, 153, 0.75);
+}
+.mg {
+  margin-bottom: 20px;
+}
+.rsize {
+  background: #000;
+}
