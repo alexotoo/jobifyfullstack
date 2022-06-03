@@ -3,8 +3,8 @@ import NextLink from "next/link";
 const NavItem = ({ icon, text, url }) => {
   return (
     <NextLink href={url} passHref>
-      <Link w="80%">
-        <Box p="12" bg="white" borderRadius="15px" className="shd" my="12">
+      <Link w="70%">
+        <Box p="2" bg="color.900" borderRadius="15px" boxShadow={"lg"}>
           <HStack>
             {" "}
             <Circle

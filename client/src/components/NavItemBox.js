@@ -6,9 +6,10 @@ import {
   IoSearchCircleSharp,
   IoPersonSharp,
 } from "react-icons/io5";
+
 const NavItemBox = () => {
   return (
-    <VStack>
+    <VStack position={"fixed"} minW="25%">
       <NavItem text="Stats" icon={<IoBarChartSharp />} url="/dashboard/stats" />
       <NavItem
         text="All Jobs"

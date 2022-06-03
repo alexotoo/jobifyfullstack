@@ -1,3 +1,4 @@
-export const hompe = () => {
-  return <div>hompe</div>;
+const home = () => {
+  return <div>home</div>;
 };
+export default home;
