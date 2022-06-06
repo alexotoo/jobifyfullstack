@@ -10,13 +10,15 @@ const NavItem = ({ icon, text, url }) => {
             <Circle
               w="40px"
               h="40px"
-              bg="tomato"
+              bg="color.100"
               color="white"
               borderRadius="15px"
             >
               {icon}
             </Circle>
-            <Text pl="10px">{text}</Text>
+            <Text pl="10px" fontWeight={"bold"}>
+              {text}
+            </Text>
           </HStack>
         </Box>
       </Link>

@@ -1,4 +1,4 @@
-import { VStack, Spacer } from "@chakra-ui/react";
+import { VStack, Spacer, Box, Center } from "@chakra-ui/react";
 import NavItem from "./NavItem";
 import {
   IoBarChartSharp,
@@ -6,10 +6,24 @@ import {
   IoSearchCircleSharp,
   IoPersonSharp,
 } from "react-icons/io5";
+import Image from "next/image";
+import logo from "../../public/images/logo.png";
 
 const NavItemBox = () => {
   return (
-    <VStack position={"fixed"} minW="25%">
+    <VStack position={"fixed"} minW="25%" bg="color.800" h="100%">
+      <Box
+        h="100px"
+        pt="2rem"
+        borderBottom="1px"
+        borderColor="gray.400"
+        w="100%"
+        mb="30px"
+      >
+        <Center>
+          <Image src={logo} width="150px" height={"50%"} />
+        </Center>
+      </Box>
       <NavItem text="Stats" icon={<IoBarChartSharp />} url="/dashboard/stats" />
       <NavItem
         text="All Jobs"
