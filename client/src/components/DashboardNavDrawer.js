@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { IoReorderThreeOutline } from "react-icons/io5";
 import {
   Drawer,
   DrawerBody,
@@ -10,6 +11,7 @@ import {
   Portal,
   useDisclosure,
   Button,
+  Center,
 } from "@chakra-ui/react";
 
 const DashboardNavDrawer = () => {
@@ -19,7 +21,9 @@ const DashboardNavDrawer = () => {
   return (
     <>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        Open
+        <Center>
+          <IoReorderThreeOutline />
+        </Center>
       </Button>
       <Drawer
         isOpen={isOpen}

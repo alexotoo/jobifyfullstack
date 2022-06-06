@@ -1,4 +1,6 @@
 import NextLink from "next/link";
+import { IoPersonSharp, IoReorderThreeOutline } from "react-icons/io5";
+import { useRouter } from "next/router";
 
 import {
   Box,
@@ -6,11 +8,6 @@ import {
   Avatar,
   Link,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -20,11 +17,28 @@ import {
   HStack,
   Text,
   Spacer,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 import DashboardNavDrawer from "./DashboardNavDrawer";
+import { useAppContext } from "../context/contextApp";
+useAppContext;
 
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { user } = useAppContext();
+  const router = useRouter();
+  const userName = user.name;
+  const formatUserName = (profile) => {
+    return userName.charAt(0).toUpperCase() + userName.slice(1);
+  };
+  console.log(user);
+  console.log(router.pathname);
   return (
     <Flex
       px={4}
@@ -34,57 +48,40 @@ export default function Navbar() {
       my={"20px"}
       h="6rem"
       padding="10px"
-      // className="blur"
-      backdropFilter="auto"
-      backdropBlur="18px"
+      className="blur"
+      // backdropFilter="auto"
+      // backdropBlur="18px"
       ml="2rem"
       justifyContent={"space-between"}
+      alignItems="center"
     >
       <HStack>
-        <Text>pages</Text>
+        <Text>{router.pathname}</Text>
       </HStack>
-      <HStack spacing={7}>
-        <Spacer />
+      <Flex w="270px" alignItems="center" justifyContent={"space-between"}>
+        <DashboardNavDrawer />
+
         <Menu>
           <MenuButton
             as={Button}
-            rounded={"full"}
-            variant={"link"}
-            cursor={"pointer"}
-            minW={0}
+            colorScheme="pink"
+            leftIcon={<IoPersonSharp />}
           >
-            <Avatar
-              size={"sm"}
-              src={"https://avatars.dicebear.com/api/male/username.svg"}
-            />
+            {userName.charAt(0).toUpperCase()}
           </MenuButton>
-          <MenuList alignItems={"center"}>
-            <br />
-            <Center>
-              <Avatar
-                size={"2xl"}
-                src={"https://avatars.dicebear.com/api/male/username.svg"}
-              />
-            </Center>
-            <br />
-            <Center>
-              <p>Username</p>
-            </Center>
-            <br />
+          <MenuList borderRadius={"15px"}>
+            <MenuGroup title={formatUserName(userName)}>
+              <MenuItem>My Account</MenuItem>
+              <MenuItem>Payments </MenuItem>
+            </MenuGroup>
             <MenuDivider />
-            <MenuItem>Your Servers</MenuItem>
-            <MenuItem>Account Settings</MenuItem>
-            <MenuItem>Logout</MenuItem>
+            <MenuGroup title="Help">
+              <MenuItem>Docs</MenuItem>
+              <MenuItem>FAQ</MenuItem>
+            </MenuGroup>
           </MenuList>
-          <NextLink href="/dashboard" passHref>
-            <Link>Home</Link>
-          </NextLink>
-          <NextLink href="/dashboard/jobs" passHref>
-            <Link>jobs</Link>
-          </NextLink>
-          <DashboardNavDrawer />
         </Menu>
-      </HStack>
+      </Flex>
     </Flex>
   );
 }

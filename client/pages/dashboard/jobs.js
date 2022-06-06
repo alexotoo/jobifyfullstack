@@ -3,7 +3,7 @@ import DashboardLayout from "../../src/components/DashboardLayout";
 
 function jobs() {
   return (
-    <Box bg={"color.500"} minH={"1200%"} px="2rem" pt="8rem">
+    <Box>
       {/* <Navbar /> */}
       hellooo jobs
     </Box>
