@@ -8,6 +8,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
   UPDATE_INITIAL_STATES,
+  LOGOUT_USER,
 } from "./actions";
 
 import { getInitialState } from "./contextApp";
@@ -90,6 +91,17 @@ const reducer = (state = getInitialState(), action) => {
       showAlert: true,
       alertType: "error",
       alertText: action.payload.msg,
+    };
+  }
+
+  //log out user
+  if (action.type === LOGOUT_USER) {
+    return {
+      ...getInitialState(),
+      user: null,
+      token: null,
+      jobLocation: "",
+      userLocation: "",
     };
   }
 

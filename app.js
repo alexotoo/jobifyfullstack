@@ -6,6 +6,7 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import authRouter from "./routes/authRoutes.js";
 import jobRouter from "./routes/jobsRoutes.js";
+import authUser from "./middleware/auth.js";
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.get("/api/v1", (req, res) => {
 //   res.send("<h1>Welcome-job-search</h1>");
 // });
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/jobs", jobRouter);
+app.use("/api/v1/jobs", authUser, jobRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

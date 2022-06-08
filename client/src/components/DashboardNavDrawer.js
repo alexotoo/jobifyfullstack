@@ -13,6 +13,8 @@ import {
   Button,
   Center,
 } from "@chakra-ui/react";
+import NavItem from "./NavItem";
+import NavItemBox from "./NavItemBox";
 
 const DashboardNavDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,18 +34,15 @@ const DashboardNavDrawer = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg="color.800">
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader></DrawerHeader>
 
-          <DrawerBody>body here</DrawerBody>
+          <DrawerBody>
+            <NavItemBox position={"relative"} />
+          </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          <DrawerFooter>@great app</DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

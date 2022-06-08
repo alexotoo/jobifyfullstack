@@ -31,7 +31,7 @@ import { useAppContext } from "../context/contextApp";
 useAppContext;
 
 export default function Navbar() {
-  const { user } = useAppContext();
+  const { user, logoutUser } = useAppContext();
   const router = useRouter();
   const userName = user.name;
   const formatUserName = (profile) => {
@@ -72,7 +72,7 @@ export default function Navbar() {
           <MenuList borderRadius={"15px"}>
             <MenuGroup title={formatUserName(userName)}>
               <MenuItem>My Account</MenuItem>
-              <MenuItem>Payments </MenuItem>
+              <MenuItem onClick={logoutUser}>Log out </MenuItem>
             </MenuGroup>
             <MenuDivider />
             <MenuGroup title="Help">

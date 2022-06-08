@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import NextLink from "next/link";
 import hero from "../public/images/hero.svg";
 
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
@@ -15,6 +15,7 @@ import {
   Icon,
   IconProps,
   Img,
+  Link,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
@@ -72,15 +73,19 @@ export default function Home() {
               <FaQuoteRight className="icons" /> — Calvin Coolidge.
             </Text>
             <Stack spacing={6} direction={"row"}>
-              <Button
-                rounded={"full"}
-                color="white"
-                px={6}
-                bg={"color.600"}
-                _hover={{ bg: "color.700" }}
-              >
-                Get started
-              </Button>
+              <NextLink href={"/register"}>
+                <Link>
+                  <Button
+                    rounded={"full"}
+                    color="white"
+                    px={6}
+                    bg={"color.600"}
+                    _hover={{ bg: "color.700" }}
+                  >
+                    Login/Register
+                  </Button>
+                </Link>
+              </NextLink>
               <Button rounded={"full"} px={6}>
                 Learn more
               </Button>

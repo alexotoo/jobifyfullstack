@@ -12,6 +12,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
   UPDATE_INITIAL_STATES,
+  LOGOUT_USER,
 } from "./actions";
 
 const getInitialState = () => {
@@ -117,10 +118,25 @@ const AppProvider = ({ children }) => {
     }
     clearAlert();
   };
+  const logoutUser = () => {
+    dispatch({ type: LOGOUT_USER });
+    removeUserFromLocalStorage();
+  };
+
+  const updateUser = async (currentUser) => {
+    console.log(currentUser);
+  };
 
   return (
     <AppContext.Provider
-      value={{ ...state, displayAlert, registerUser, loginUser }}
+      value={{
+        ...state,
+        displayAlert,
+        registerUser,
+        loginUser,
+        logoutUser,
+        updateUser,
+      }}
     >
       {children}
     </AppContext.Provider>

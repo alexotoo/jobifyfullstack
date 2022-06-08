@@ -9,13 +9,13 @@ import {
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 
-const NavItemBox = () => {
+const NavItemBox = ({ position }) => {
   return (
-    <VStack position={"fixed"} minW="25%" bg="color.800" h="100%">
+    <VStack position={position} minW="25%" bg="color.800" h="100%">
       <Box
         h="100px"
         pt="2rem"
-        borderBottom="1px"
+        borderBottom="1px "
         borderColor="gray.400"
         w="100%"
         mb="30px"

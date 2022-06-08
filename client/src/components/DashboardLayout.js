@@ -29,7 +29,7 @@ function DashboardLayout({ children }) {
 
   if (!user && isLogedIn) {
     console.log("object");
-    router.push("/register");
+    router.push("/");
     // setTimeout(() => {
     //   router.push("/register");
     // }, 3000);
@@ -41,14 +41,14 @@ function DashboardLayout({ children }) {
     <div>
       {user && (
         <Flex minH="100vh" bg="color.800">
-          <Box minW="25%" overflow={"hidden"}>
-            <NavItemBox />
+          <Box minW="25%">
+            <NavItemBox position={"fixed"} />
           </Box>
 
           <VStack flex={1}>
             <Box minW="100%" minH="100%">
               <Navbar />
-              <Box bg={"color.500"} minH={"1200%"} px="2rem" pt="8rem">
+              <Box bg={"color.800"} minH={"1200%"} px="2rem" pt="8rem">
                 {children}
               </Box>
             </Box>
