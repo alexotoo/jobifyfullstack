@@ -130,7 +130,7 @@ const reducer = (state = getInitialState(), action) => {
       ...state,
       isLoading: false,
       showAlert: true,
-      alertType: "danger",
+      alertType: "error",
       alertText: action.payload.msg,
     };
   }

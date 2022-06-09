@@ -4,7 +4,7 @@ import CustomAPIError from "./customAPI.js";
 class NotFoundError extends CustomAPIError {
   constructor(message) {
     super(message);
-    this.StatusCode = StatusCodes.NOT_FOUND;
+    this.statusCode = StatusCodes.NOT_FOUND;
   }
 }
 

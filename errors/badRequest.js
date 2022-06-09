@@ -4,7 +4,7 @@ import CustomAPIError from "./customAPI.js";
 class BadRequestError extends CustomAPIError {
   constructor(message) {
     super(message);
-    this.StatusCode = StatusCodes.BAD_REQUEST;
+    this.statusCode = StatusCodes.BAD_REQUEST;
   }
 }
 

@@ -12,7 +12,7 @@ const NavItem = ({ icon, text, url }) => {
               h="40px"
               bg="color.100"
               color="white"
-              borderRadius="15px"
+              borderRadius="2xl"
             >
               {icon}
             </Circle>
