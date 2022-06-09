@@ -15,9 +15,9 @@ const NavItemBox = ({ position }) => {
       <Box
         h="100px"
         pt="2rem"
-        borderBottom="1px "
+        borderBottom="1px"
         borderColor="gray.400"
-        w="100%"
+        w="70%"
         mb="30px"
       >
         <Center>

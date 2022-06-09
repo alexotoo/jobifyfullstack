@@ -4,7 +4,7 @@ const NavItem = ({ icon, text, url }) => {
   return (
     <NextLink href={url} passHref>
       <Link w="70%" _hover={{ textDecoration: "none" }}>
-        <Box p="2" bg="color.900" borderRadius="15px" boxShadow={"lg"}>
+        <Box p="2" bg="color.900" borderRadius="2xl" boxShadow={"sm"}>
           <HStack>
             {" "}
             <Circle

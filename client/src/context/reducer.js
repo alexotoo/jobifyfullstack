@@ -9,6 +9,9 @@ import {
   LOGIN_USER_ERROR,
   UPDATE_INITIAL_STATES,
   LOGOUT_USER,
+  UPDATE_USER_START,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_ERROR,
 } from "./actions";
 
 import { getInitialState } from "./contextApp";
@@ -102,6 +105,33 @@ const reducer = (state = getInitialState(), action) => {
       token: null,
       jobLocation: "",
       userLocation: "",
+    };
+  }
+
+  //update user
+  if (action.type === UPDATE_USER_START) {
+    return { ...state, isLoading: true };
+  }
+  if (action.type === UPDATE_USER_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      token: action.payload.token,
+      user: action.payload.user,
+      userLocation: action.payload.location,
+      jobLocation: action.payload.location,
+      showAlert: true,
+      alertType: "success",
+      alertText: "User Profile Updated!",
+    };
+  }
+  if (action.type === UPDATE_USER_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      alertText: action.payload.msg,
     };
   }
 

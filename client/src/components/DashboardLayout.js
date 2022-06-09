@@ -48,7 +48,7 @@ function DashboardLayout({ children }) {
           <VStack flex={1}>
             <Box minW="100%" minH="100%">
               <Navbar />
-              <Box bg={"color.800"} minH={"1200%"} px="2rem" pt="8rem">
+              <Box bg={"color.800"} minH={"100%"} px="2rem" pt="8rem">
                 {children}
               </Box>
             </Box>

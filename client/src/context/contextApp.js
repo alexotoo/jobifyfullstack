@@ -13,6 +13,9 @@ import {
   LOGIN_USER_ERROR,
   UPDATE_INITIAL_STATES,
   LOGOUT_USER,
+  UPDATE_USER_START,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_ERROR,
 } from "./actions";
 
 const getInitialState = () => {
@@ -38,6 +41,36 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, getInitialState);
+
+  //axios http setup
+  const authHTTPfetch = axios.create({
+    baseURL: "http://localhost:8000/api/v1",
+  });
+
+  //with axios request
+  authHTTPfetch.interceptors.request.use(
+    (config) => {
+      // config.headers.common["Authorization"] = `Bearer ${state.token}`;
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+
+  //with axios response
+  authHTTPfetch.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      // console.log(error.response)
+      if (error.response.status === 401) {
+        logoutUser();
+      }
+      return Promise.reject(error);
+    }
+  );
 
   useEffect(() => {
     updateSates();
@@ -123,8 +156,38 @@ const AppProvider = ({ children }) => {
     removeUserFromLocalStorage();
   };
 
+  //update user
   const updateUser = async (currentUser) => {
-    console.log(currentUser);
+    dispatch({ type: UPDATE_USER_START });
+    try {
+      const { data } = await authHTTPfetch.patch(
+        "/auth/updateUser",
+        currentUser,
+        {
+          headers: {
+            Authorization: `Bearer ${state.token}`,
+          },
+        }
+      );
+      console.log(data);
+
+      const { user, location, token } = data;
+
+      dispatch({
+        type: UPDATE_USER_SUCCESS,
+        payload: { user, location, token },
+      });
+      addUserToLocalStorage({ user, location, token });
+    } catch (error) {
+      console.log(error.response);
+      if (error.response.status !== 401) {
+        dispatch({
+          type: UPDATE_USER_ERROR,
+          payload: { msg: error.response.data.msg },
+        });
+      }
+    }
+    clearAlert();
   };
 
   return (
