@@ -10,6 +10,7 @@ import {
   Center,
   Button,
   HStack,
+  Text,
 } from "@chakra-ui/react";
 
 import DashboardLayout from "../../src/components/DashboardLayout";
@@ -46,6 +47,9 @@ const profile = () => {
     >
       {showAlert && <ShowAlert />}
       <form onSubmit={handleSubmit}>
+        <Text fontSize="4xl" fontWeight="bold">
+          Profile
+        </Text>
         <Flex gap="1rem">
           <FormRow
             labelText="Name"
@@ -76,32 +80,20 @@ const profile = () => {
             handleChange={(e) => setLocation(e.target.value)}
             w="43.3%"
           />
-          {isLoading ? (
-            <Button
-              mt="2rem"
-              w="30%"
-              bg="color.600"
-              color={"white"}
-              _hover={{
-                bg: "color.700",
-              }}
-              type="submit"
-              isLoading
-            ></Button>
-          ) : (
-            <Button
-              mt="2rem"
-              w="30%"
-              bg="color.600"
-              color={"white"}
-              _hover={{
-                bg: "color.700",
-              }}
-              type="submit"
-            >
-              Save Update
-            </Button>
-          )}
+          <Button
+            mt="2rem"
+            w="30%"
+            bg="color.600"
+            color={"white"}
+            _hover={{
+              bg: "color.700",
+            }}
+            type="submit"
+            isLoading={isLoading}
+          >
+            {" "}
+            Save Update
+          </Button>
         </Flex>
       </form>
     </Box>
