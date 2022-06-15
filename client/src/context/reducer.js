@@ -17,6 +17,13 @@ import {
   CREATE_JOB_START,
   CREATE_JOB_SUCCESS,
   CREATE_JOB_ERROR,
+  GET_JOBS_START,
+  GET_JOBS_SUCCESS,
+  SET_EDIT_JOB,
+  DELETE_JOB_START,
+  EDIT_JOB_START,
+  EDIT_JOB_SUCCESS,
+  EDIT_JOB_ERROR,
 } from "./actions";
 
 import { getInitialState } from "./contextApp";
@@ -191,6 +198,19 @@ const reducer = (state = getInitialState(), action) => {
     };
   }
 
+  //get jobs
+  if (action.type === GET_JOBS_START) {
+    return { ...state, isLoading: true, showAlert: false };
+  }
+  if (action.type === GET_JOBS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      jobs: action.payload.jobs,
+      totalJobs: action.payload.totalJobs,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
   throw new Error(`no such action : ${action.type}`);
 };
 

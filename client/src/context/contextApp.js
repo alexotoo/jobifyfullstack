@@ -21,6 +21,13 @@ import {
   CREATE_JOB_START,
   CREATE_JOB_SUCCESS,
   CREATE_JOB_ERROR,
+  GET_JOBS_START,
+  GET_JOBS_SUCCESS,
+  SET_EDIT_JOB,
+  DELETE_JOB_START,
+  EDIT_JOB_START,
+  EDIT_JOB_SUCCESS,
+  EDIT_JOB_ERROR,
 } from "./actions";
 
 const getInitialState = () => {
@@ -49,6 +56,8 @@ const getInitialState = () => {
     status: "pending",
     jobs: [],
     totalJobs: 0,
+    numOfPages: 1,
+    page: 1,
   };
   return initialState;
 };
@@ -217,8 +226,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CLEAR_VALUES });
   };
 
-  //CREATE JOBS
-
+  //create jobs
   const createJob = async () => {
     dispatch({ type: CREATE_JOB_START });
     try {
@@ -242,6 +250,75 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  //get all jobs
+  const getJobs = async () => {
+    // const { page, search, searchStatus, searchType, sort } = state;
+
+    //let url = `/jobs?page=${page}&status=${searchStatus}&jobType=${searchType}&sort=${sort}`;
+    // if (search) {
+    //   url = url + `&search=${search}`;
+    // }
+    let url = `/jobs`;
+    dispatch({ type: GET_JOBS_START });
+    try {
+      const { data } = await authHTTPfetch(url);
+      const { jobs, totalJobs, numOfPages } = data;
+      console.log(data);
+      dispatch({
+        type: GET_JOBS_SUCCESS,
+        payload: {
+          jobs,
+          totalJobs,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      logoutUser();
+    }
+    clearAlert();
+  };
+
+  //set edit job
+  const setEditJob = (id) => {
+    dispatch({ type: SET_EDIT_JOB, payload: { id } });
+  };
+
+  //edit job
+  const editJob = async () => {
+    dispatch({ type: EDIT_JOB_START });
+
+    try {
+      const { position, company, jobLocation, jobType, status } = state;
+      await authFetch.patch(`/jobs/${state.editJobId}`, {
+        company,
+        position,
+        jobLocation,
+        jobType,
+        status,
+      });
+      dispatch({ type: EDIT_JOB_SUCCESS });
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: EDIT_JOB_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
+  //delete job
+  const deleteJob = async (jobId) => {
+    dispatch({ type: DELETE_JOB_START });
+    try {
+      await authFetch.delete(`/jobs/${jobId}`);
+      getJobs();
+    } catch (error) {
+      logoutUser();
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -254,6 +331,10 @@ const AppProvider = ({ children }) => {
         handleChange,
         clearValues,
         createJob,
+        getJobs,
+        deleteJob,
+        editJob,
+        setEditJob,
       }}
     >
       {children}
