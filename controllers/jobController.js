@@ -62,7 +62,7 @@ const deleteJob = async (req, res) => {
     throw new NotFoundError(`No job with id :${jobId}`);
   }
 
-  checkPermissions(req.user, job.createdBy);
+  checkJobUserPermission(req.user, job.createdBy);
 
   await job.remove();
 

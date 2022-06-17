@@ -289,7 +289,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const { position, company, jobLocation, jobType, status } = state;
-      await authFetch.patch(`/jobs/${state.editJobId}`, {
+      await authHTTPfetch.patch(`/jobs/${state.editJobId}`, {
         company,
         position,
         jobLocation,
@@ -312,10 +312,11 @@ const AppProvider = ({ children }) => {
   const deleteJob = async (jobId) => {
     dispatch({ type: DELETE_JOB_START });
     try {
-      await authFetch.delete(`/jobs/${jobId}`);
+      await authHTTPfetch.delete(`/jobs/${jobId}`);
       getJobs();
     } catch (error) {
-      logoutUser();
+      console.log(error.response);
+      //logoutUser();
     }
   };
 

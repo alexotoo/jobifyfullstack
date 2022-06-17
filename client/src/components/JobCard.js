@@ -101,6 +101,7 @@ const JobCard = ({
           px={6}
           bg={"color.400"}
           _hover={{ bg: "color.500" }}
+          onClick={() => deleteJob(_id)}
         >
           Delete
         </Button>

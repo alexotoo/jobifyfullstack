@@ -211,6 +211,8 @@ const reducer = (state = getInitialState(), action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
+
+  //set edit job
   if (action.type === SET_EDIT_JOB) {
     const job = state.jobs.find((job) => job._id === action.payload.id);
     const { _id, position, company, jobLocation, jobType, status } = job;
@@ -223,6 +225,36 @@ const reducer = (state = getInitialState(), action) => {
       jobLocation,
       jobType,
       status,
+    };
+  }
+  //delete job
+  if (action.type === DELETE_JOB_START) {
+    return { ...state, isLoading: true };
+  }
+
+  //edit job
+  if (action.type === EDIT_JOB_START) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === EDIT_JOB_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      alertText: "Job Updated!",
+    };
+  }
+  if (action.type === EDIT_JOB_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "error",
+      alertText: action.payload.msg,
     };
   }
   throw new Error(`no such action : ${action.type}`);
