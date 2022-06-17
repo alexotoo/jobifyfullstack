@@ -24,6 +24,8 @@ import {
   EDIT_JOB_START,
   EDIT_JOB_SUCCESS,
   EDIT_JOB_ERROR,
+  SHOW_STATS_START,
+  SHOW_STATS_SUCCESS,
 } from "./actions";
 
 import { getInitialState } from "./contextApp";
@@ -255,6 +257,23 @@ const reducer = (state = getInitialState(), action) => {
       showAlert: true,
       alertType: "error",
       alertText: action.payload.msg,
+    };
+  }
+
+  //show stats
+  if (action.type === SHOW_STATS_START) {
+    return {
+      ...state,
+      isLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === SHOW_STATS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      stats: action.payload.stats,
+      monthlyApplications: action.payload.monthlyApplications,
     };
   }
   throw new Error(`no such action : ${action.type}`);

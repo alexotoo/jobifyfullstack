@@ -28,6 +28,8 @@ import {
   EDIT_JOB_START,
   EDIT_JOB_SUCCESS,
   EDIT_JOB_ERROR,
+  SHOW_STATS_START,
+  SHOW_STATS_SUCCESS,
 } from "./actions";
 
 const getInitialState = () => {
@@ -58,6 +60,8 @@ const getInitialState = () => {
     totalJobs: 0,
     numOfPages: 1,
     page: 1,
+    stats: {},
+    monthlyApplications: [],
   };
   return initialState;
 };
@@ -316,8 +320,27 @@ const AppProvider = ({ children }) => {
       getJobs();
     } catch (error) {
       console.log(error.response);
+      logoutUser();
+    }
+  };
+
+  //show stats
+  const showStats = async () => {
+    dispatch({ type: SHOW_STATS_START });
+    try {
+      const { data } = await authHTTPfetch("/jobs/stats");
+
+      dispatch({
+        type: SHOW_STATS_SUCCESS,
+        payload: {
+          stats: data.defaultStats,
+          monthlyApplications: data.monthlyApplications,
+        },
+      });
+    } catch (error) {
       //logoutUser();
     }
+    clearAlert();
   };
 
   return (
@@ -336,6 +359,7 @@ const AppProvider = ({ children }) => {
         deleteJob,
         editJob,
         setEditJob,
+        showStats,
       }}
     >
       {children}
