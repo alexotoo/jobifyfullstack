@@ -37,7 +37,7 @@ const JobsContainer = () => {
   if (jobs.length === 0) {
     return (
       <Box>
-        <h2>No jobs to display...</h2>
+        <Text>No jobs to display...</Text>
       </Box>
     );
   }

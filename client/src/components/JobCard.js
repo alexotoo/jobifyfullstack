@@ -83,13 +83,14 @@ const JobCard = ({
         </HStack>
       </Box>
       <Stack spacing={6} direction={"row"} padding="1rem" color="white">
-        <NextLink href={"/savejob"}>
+        <NextLink href={"/dashboard/saveJob"}>
           <Link _hover={{ textDecoration: "none" }}>
             <Button
               rounded={"lg"}
               px={6}
               bg={"color.200"}
               _hover={{ bg: "color.700" }}
+              onClick={() => setEditJob(_id)}
             >
               Edit
             </Button>
