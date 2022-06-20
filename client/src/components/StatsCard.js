@@ -1,6 +1,6 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import { useAppContext } from "../context/contextApp";
 import { IoHandLeft, IoBagCheckSharp, IoRefreshCircle } from "react-icons/io5";
+import StatsItem from "./StatsItem";
 
 const StatsCard = () => {
   const { stats } = useAppContext();
@@ -8,48 +8,38 @@ const StatsCard = () => {
   console.log(stats);
   const defaultStats = [
     {
+      id: 1,
       title: "pending applications",
       count: stats.pending || 0,
-      icon: <IoRefreshCircle />,
+      icon: <IoRefreshCircle size={"80%"} />,
       color: "color.200",
       bcg: "color.300",
     },
     {
+      id: 2,
       title: "interviews scheduled",
       count: stats.interview || 0,
-      icon: <IoBagCheckSharp />,
-      color: "color.600",
-      bcg: "color.700",
+      icon: <IoBagCheckSharp size={"80%"} />,
+      color: "color.100",
+      bcg: "color.200",
     },
     {
+      id: 3,
       title: "jobs declined",
       count: stats.declined || 0,
-      icon: <IoHandLeft />,
-      color: "color.400",
-      bcg: "color.500",
+      icon: <IoHandLeft size={"80%"} />,
+      color: "color.500",
+      bcg: "color.400",
     },
   ];
 
   console.log(defaultStats);
   return (
-    <Box
-    // bg={bcg}
-    // color={color}
-    // display="flex"
-    // flexDir="column"
-    // borderRadius="2xl"
-    // boxShadow="lg"
-    >
-      <Flex>
-        <Text></Text>
-        <Center></Center>
-      </Flex>
-      <Text></Text>
-      book
-    </Box>
+    <div className="grid_jobs">
+      {defaultStats.map((item, index) => {
+        return <StatsItem key={index} {...item} />;
+      })}
+    </div>
   );
 };
 export default StatsCard;
-// {
-//   count, title, icon, color, bcg;
-// }
