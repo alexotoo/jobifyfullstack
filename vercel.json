@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "name-of-your-vercel-app",
+  "name": "jobifyfullstack",
   "builds": [{ "src": "script.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }
