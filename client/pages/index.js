@@ -80,7 +80,7 @@ export default function Home() {
                     color="white"
                     px={6}
                     bg={"color.600"}
-                    _hover={{ bg: "color.700" }}
+                    _hover={{ bg: "color.700", textDecoration: "none" }}
                   >
                     Login/Register
                   </Button>

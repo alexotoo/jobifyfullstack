@@ -49,14 +49,15 @@ export default function Navbar() {
       h="6rem"
       padding="10px"
       className="blur"
-      // backdropFilter="auto"
-      // backdropBlur="18px"
       ml="2rem"
       justifyContent={"space-between"}
       alignItems="center"
+      boxShadow="lg"
     >
       <HStack>
-        <Text>{router.pathname}</Text>
+        <Text fontSize="1.5rem" fontWeight="bold">
+          Page: {router.pathname}
+        </Text>
       </HStack>
       <Flex w="270px" alignItems="center" justifyContent={"space-between"}>
         <DashboardNavDrawer />
@@ -64,7 +65,8 @@ export default function Navbar() {
         <Menu>
           <MenuButton
             as={Button}
-            colorScheme="pink"
+            bg="color.300"
+            color="color.100"
             leftIcon={<IoPersonSharp />}
           >
             {userName.charAt(0).toUpperCase()}

@@ -30,6 +30,8 @@ import {
   EDIT_JOB_ERROR,
   SHOW_STATS_START,
   SHOW_STATS_SUCCESS,
+  CLEAR_FILTERS,
+  CHANGE_PAGE,
 } from "./actions";
 
 const getInitialState = () => {
@@ -62,6 +64,11 @@ const getInitialState = () => {
     page: 1,
     stats: {},
     monthlyApplications: [],
+    search: "",
+    searchStatus: "all",
+    searchType: "all",
+    sort: "latest",
+    sortOptions: ["latest", "oldest", "a-z", "z-a"],
   };
   return initialState;
 };
@@ -256,18 +263,18 @@ const AppProvider = ({ children }) => {
 
   //get all jobs
   const getJobs = async () => {
-    // const { page, search, searchStatus, searchType, sort } = state;
+    const { page, search, searchStatus, searchType, sort } = state;
 
-    //let url = `/jobs?page=${page}&status=${searchStatus}&jobType=${searchType}&sort=${sort}`;
-    // if (search) {
-    //   url = url + `&search=${search}`;
-    // }
-    let url = `/jobs`;
+    let url = `/jobs?page=${page}&status=${searchStatus}&jobType=${searchType}&sort=${sort}`;
+    if (search) {
+      url = url + `&search=${search}`;
+    }
+    //let url = `/jobs`;
     dispatch({ type: GET_JOBS_START });
     try {
       const { data } = await authHTTPfetch(url);
       const { jobs, totalJobs, numOfPages } = data;
-      console.log(data);
+
       dispatch({
         type: GET_JOBS_SUCCESS,
         payload: {
@@ -343,10 +350,18 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
+  const changePage = (page) => {
+    dispatch({ type: CHANGE_PAGE, payload: { page } });
+  };
+
   return (
     <AppContext.Provider
       value={{
         ...state,
+        changePage,
         displayAlert,
         registerUser,
         loginUser,
@@ -360,6 +375,7 @@ const AppProvider = ({ children }) => {
         editJob,
         setEditJob,
         showStats,
+        clearFilters,
       }}
     >
       {children}

@@ -22,7 +22,7 @@ const DashboardNavDrawer = () => {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+      <Button ref={btnRef} bg="color.200" onClick={onOpen}>
         <Center>
           <IoReorderThreeOutline />
         </Center>

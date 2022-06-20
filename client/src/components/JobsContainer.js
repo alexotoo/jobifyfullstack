@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Box, Center, Spinner, Text } from "@chakra-ui/react";
 import { useAppContext } from "../context/contextApp";
 import JobCard from "./JobCard";
+import PaginatBtnContainer from "./PaginatBtnContainer";
 
 const JobsContainer = () => {
   const {
@@ -51,6 +52,8 @@ const JobsContainer = () => {
           return <JobCard Job key={job._id} {...job} />;
         })}
       </div>
+
+      {numOfPages > 1 && <PaginatBtnContainer />}
     </Box>
   );
 };

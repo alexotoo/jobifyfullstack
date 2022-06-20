@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import {
-  Box,
-  Grid,
-  GridItem,
-  Link,
-  Text,
-  Flex,
-  Center,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, VStack } from "@chakra-ui/react";
 import DashboardNavDrawer from "./DashboardNavDrawer";
 import Navbar from "./Navbar";
 
@@ -21,7 +12,6 @@ function DashboardLayout({ children }) {
   const { isLoading, showAlert, displayAlert, registerUser, user, loginUser } =
     useAppContext();
   const router = useRouter();
-  console.log(user);
 
   useEffect(() => {
     setIsLoggedIn(true);
@@ -58,14 +48,5 @@ function DashboardLayout({ children }) {
     </div>
   );
 }
-// export async function getStaticProps() {
-//   const { isLoading, showAlert, displayAlert, registerUser, user, loginUser } =
-//     useAppContext();
 
-//   return {
-//     props: {
-//       user,
-//     },
-//   };
-// }
 export default DashboardLayout;
