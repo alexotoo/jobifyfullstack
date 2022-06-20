@@ -6,7 +6,7 @@ const error = () => {
   return (
     <Container>
       <Center minH={"100vh"}>
-        <Image src={errorImg} />
+        <Image alt="logo" src={errorImg} />
       </Center>
     </Container>
   );

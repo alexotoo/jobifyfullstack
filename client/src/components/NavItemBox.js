@@ -21,7 +21,7 @@ const NavItemBox = ({ position }) => {
         mb="30px"
       >
         <Center>
-          <Image src={logo} width="150px" height={"50%"} />
+          <Image alt="logo" src={logo} width="150px" height={"50%"} />
         </Center>
       </Box>
       <NavItem text="Stats" icon={<IoBarChartSharp />} url="/dashboard/stats" />

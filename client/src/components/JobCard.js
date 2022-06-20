@@ -77,8 +77,8 @@ const JobCard = ({
         </HStack>
       </Box>
       <Stack spacing={6} direction={"row"} padding="1rem" color="white">
-        <NextLink href={"/dashboard/saveJob"}>
-          <Link _hover={{ textDecoration: "none" }}>
+        <NextLink href={"/dashboard/saveJob"} passHref>
+          <Link _hover={{ textDecoration: "none" }} passHref>
             <Button
               rounded={"lg"}
               px={6}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
   Flex,
@@ -28,7 +28,7 @@ const initialState = {
   isMember: false,
 };
 //app starts here
-const register = () => {
+const Register = () => {
   const router = useRouter();
   const [values, setValues] = useState(initialState);
   const [labelTitle, setLabelTitle] = useState("");
@@ -73,6 +73,7 @@ const register = () => {
         router.push("/dashboard");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [user]);
 
   return (
@@ -178,4 +179,4 @@ const register = () => {
     </Flex>
   );
 };
-export default register;
+export default Register;

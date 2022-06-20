@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Flex, Button, Text } from "@chakra-ui/react";
 
 import DashboardLayout from "../../src/components/DashboardLayout";
@@ -6,7 +7,7 @@ import FormRow from "../../src/components/FormRow";
 import ShowAlert from "../../src/components/ShowAlert";
 import FormRowOptions from "../../src/components/FormRowOptions";
 
-const saveJob = () => {
+const SaveJob = () => {
   const {
     isLoading,
     isEditing,
@@ -133,7 +134,7 @@ const saveJob = () => {
   );
 };
 
-saveJob.getLayout = function getLayout(page) {
+SaveJob.getLayout = function getLayout(page) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
-export default saveJob;
+export default SaveJob;

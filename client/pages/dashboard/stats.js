@@ -1,16 +1,17 @@
 import { Center, Spinner } from "@chakra-ui/react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import DashboardLayout from "../../src/components/DashboardLayout";
 import StatsCard from "../../src/components/StatsCard.js";
 import StatsChartContainer from "../../src/components/StatsChartContainer";
 
 import { useAppContext } from "../../src/context/contextApp";
 
-const stats = () => {
+const Stats = () => {
   const { showStats, isLoading, monthlyApplications } = useAppContext();
 
   useEffect(() => {
     showStats();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {
@@ -35,7 +36,7 @@ const stats = () => {
   );
 };
 
-stats.getLayout = function getLayout(page) {
+Stats.getLayout = function getLayout(page) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
-export default stats;
+export default Stats;

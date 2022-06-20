@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Box, Flex, Button, Text } from "@chakra-ui/react";
 
 import DashboardLayout from "../../src/components/DashboardLayout";
@@ -6,7 +6,7 @@ import { useAppContext } from "../../src/context/contextApp";
 import FormRow from "../../src/components/FormRow";
 import ShowAlert from "../../src/components/ShowAlert";
 
-const profile = () => {
+const Profile = () => {
   const { user, showAlert, displayAlert, updateUser, isLoading } =
     useAppContext();
 
@@ -88,7 +88,7 @@ const profile = () => {
   );
 };
 
-profile.getLayout = function getLayout(page) {
+Profile.getLayout = function getLayout(page) {
   return <DashboardLayout>{page}</DashboardLayout>;
 };
-export default profile;
+export default Profile;

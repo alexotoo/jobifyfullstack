@@ -73,8 +73,8 @@ export default function Home() {
               <FaQuoteRight className="icons" /> — Calvin Coolidge.
             </Text>
             <Stack spacing={6} direction={"row"}>
-              <NextLink href={"/register"}>
-                <Link>
+              <NextLink href={"/register"} passHref>
+                <Link passHref>
                   <Button
                     rounded={"full"}
                     color="white"
@@ -91,7 +91,7 @@ export default function Home() {
               </Button>
             </Stack>
           </Stack>
-          <Image src={hero} />
+          <Image alt="girl serching job" src={hero} />
         </Flex>
       </Container>
     </div>
