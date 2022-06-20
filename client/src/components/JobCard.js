@@ -3,17 +3,11 @@ import {
   Box,
   VStack,
   Flex,
-  Container,
-  Heading,
   Stack,
   Text,
   Button,
-  Icon,
-  IconProps,
-  Img,
   Link,
   HStack,
-  Badge,
   Center,
   Spacer,
 } from "@chakra-ui/react";
@@ -99,8 +93,8 @@ const JobCard = ({
         <Button
           rounded={"lg"}
           px={6}
-          bg={"color.400"}
-          _hover={{ bg: "color.500" }}
+          bg={"color.500"}
+          _hover={{ bg: "color.400" }}
           onClick={() => deleteJob(_id)}
         >
           Delete

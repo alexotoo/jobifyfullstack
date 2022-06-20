@@ -2,7 +2,6 @@ import DashboardLayout from "../../src/components/DashboardLayout";
 import Navbar from "../../src/components/Navbar";
 
 const index = ({ data }) => {
-  console.log(data);
   return <div>{/* <Navbar /> */}dashboard</div>;
 };
 

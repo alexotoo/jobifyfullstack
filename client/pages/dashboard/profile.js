@@ -1,17 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  Flex,
-  Center,
-  Button,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Button, Text } from "@chakra-ui/react";
 
 import DashboardLayout from "../../src/components/DashboardLayout";
 import { useAppContext } from "../../src/context/contextApp";

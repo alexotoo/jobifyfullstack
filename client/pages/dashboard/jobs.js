@@ -3,7 +3,6 @@ import DashboardLayout from "../../src/components/DashboardLayout";
 import JobsContainer from "../../src/components/JobsContainer";
 
 function jobs({ data }) {
-  console.log(data);
   return (
     <Flex flexDirection="column">
       <Box>1</Box>

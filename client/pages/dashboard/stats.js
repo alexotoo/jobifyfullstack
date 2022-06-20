@@ -2,11 +2,12 @@ import { Center, Spinner } from "@chakra-ui/react";
 import { useEffect } from "react";
 import DashboardLayout from "../../src/components/DashboardLayout";
 import StatsCard from "../../src/components/StatsCard.js";
+import StatsChartContainer from "../../src/components/StatsChartContainer";
 
 import { useAppContext } from "../../src/context/contextApp";
 
 const stats = () => {
-  const { showStats, isLoading, monthlyApplications, stats } = useAppContext();
+  const { showStats, isLoading, monthlyApplications } = useAppContext();
 
   useEffect(() => {
     showStats();
@@ -29,8 +30,7 @@ const stats = () => {
   return (
     <>
       <StatsCard />
-
-      {/* {monthlyApplications.length > 0 && <StatsCard />} */}
+      {monthlyApplications.length > 0 && <StatsChartContainer />}
     </>
   );
 };

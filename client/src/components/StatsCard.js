@@ -1,11 +1,10 @@
 import { useAppContext } from "../context/contextApp";
 import { IoHandLeft, IoBagCheckSharp, IoRefreshCircle } from "react-icons/io5";
 import StatsItem from "./StatsItem";
+import { Box } from "@chakra-ui/react";
 
 const StatsCard = () => {
   const { stats } = useAppContext();
-
-  console.log(stats);
   const defaultStats = [
     {
       id: 1,
@@ -33,13 +32,12 @@ const StatsCard = () => {
     },
   ];
 
-  console.log(defaultStats);
   return (
-    <div className="grid_jobs">
+    <Box className="grid_jobs">
       {defaultStats.map((item, index) => {
         return <StatsItem key={index} {...item} />;
       })}
-    </div>
+    </Box>
   );
 };
 export default StatsCard;

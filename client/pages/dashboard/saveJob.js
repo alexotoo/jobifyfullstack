@@ -1,17 +1,4 @@
-import { useState } from "react";
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  Flex,
-  Center,
-  Button,
-  HStack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Button, Text } from "@chakra-ui/react";
 
 import DashboardLayout from "../../src/components/DashboardLayout";
 import { useAppContext } from "../../src/context/contextApp";
@@ -125,10 +112,10 @@ const saveJob = () => {
             </Button>
             <Button
               mt="2rem"
-              bg="color.600"
+              bg="color.500"
               color={"white"}
               _hover={{
-                bg: "color.700",
+                bg: "color.400",
               }}
               flexBasis="100%"
               onClick={(e) => {
