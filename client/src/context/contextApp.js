@@ -146,7 +146,7 @@ const AppProvider = ({ children }) => {
         "http://localhost:8000/api/v1/auth/register",
         currentUser
       );
-      console.log(response);
+
       const { user, token, location } = response.data;
       dispatch({
         type: REGISTER_USER_SUCCESS,
@@ -154,7 +154,6 @@ const AppProvider = ({ children }) => {
       });
       addUserToLocalStorage({ user, token, location });
     } catch (error) {
-      console.log(error.response);
       dispatch({
         type: REGISTER_USER_ERROR,
         payload: { msg: error.response.data.msg },
@@ -206,7 +205,6 @@ const AppProvider = ({ children }) => {
           },
         }
       );
-      console.log(data);
 
       const { user, location, token } = data;
 
@@ -216,7 +214,6 @@ const AppProvider = ({ children }) => {
       });
       addUserToLocalStorage({ user, location, token });
     } catch (error) {
-      console.log(error.response);
       if (error.response.status !== 401) {
         dispatch({
           type: UPDATE_USER_ERROR,
@@ -269,7 +266,7 @@ const AppProvider = ({ children }) => {
     if (search) {
       url = url + `&search=${search}`;
     }
-    //let url = `/jobs`;
+
     dispatch({ type: GET_JOBS_START });
     try {
       const { data } = await authHTTPfetch(url);
@@ -326,7 +323,6 @@ const AppProvider = ({ children }) => {
       await authHTTPfetch.delete(`/jobs/${jobId}`);
       getJobs();
     } catch (error) {
-      console.log(error.response);
       logoutUser();
     }
   };
@@ -345,7 +341,7 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      //logoutUser();
+      logoutUser();
     }
     clearAlert();
   };

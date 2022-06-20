@@ -34,11 +34,7 @@ export default function Navbar() {
   const { user, logoutUser } = useAppContext();
   const router = useRouter();
   const userName = user.name;
-  const formatUserName = (profile) => {
-    return userName.charAt(0).toUpperCase() + userName.slice(1);
-  };
-  console.log(user);
-  console.log(router.pathname);
+
   return (
     <Flex
       px={4}
@@ -72,7 +68,9 @@ export default function Navbar() {
             {userName.charAt(0).toUpperCase()}
           </MenuButton>
           <MenuList borderRadius={"15px"}>
-            <MenuGroup title={formatUserName(userName)}>
+            <MenuGroup
+              title={userName.charAt(0).toUpperCase() + userName.slice(1)}
+            >
               <MenuItem>My Account</MenuItem>
               <MenuItem onClick={logoutUser}>Log out </MenuItem>
             </MenuGroup>
