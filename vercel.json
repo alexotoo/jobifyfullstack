@@ -1,6 +1,6 @@
 {
   "version": 2,
   "name": "jobifyfullstack",
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/(.*)", "dest": "/" }]
 }

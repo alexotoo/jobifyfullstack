@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js --ignore client",
     "client": "npm run dev --prefix client",
-    "app": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
+    "app": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\"",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
