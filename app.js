@@ -29,7 +29,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 //   res.json({ msg: "hello there API" });
 // });
 
-app.use("/_next", express.static(path.join(__dirname, "../out")));
+// app.use("/_next", express.static(path.join(__dirname, "../out")));
 //app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.use("/api/v1/auth", authRouter);
@@ -38,7 +38,7 @@ app.use("/api/v1/jobs", authUser, jobRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../out"));
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../out"));
+// });
 export default app;
