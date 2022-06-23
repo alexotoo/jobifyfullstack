@@ -167,7 +167,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "https://workappusa.herokuapp.com/api/v1/api/v1/auth/login",
+        "https://workappusa.herokuapp.com/api/v1/auth/login",
         currentUser
       );
 
