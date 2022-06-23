@@ -70,7 +70,7 @@ const Register = () => {
   useEffect(() => {
     if (user) {
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("/dashboard/profile");
       }, 3000);
     }
     // eslint-disable-next-line
