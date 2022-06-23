@@ -80,7 +80,7 @@ const AppProvider = ({ children }) => {
 
   //axios http setup
   const authHTTPfetch = axios.create({
-    baseURL: "http://localhost:8000/api/v1",
+    baseURL: `${process.env.SERVER_URL}/api/v1`,
   });
 
   //with axios request
@@ -143,7 +143,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/register",
+        "process.env.SERVER_URL/api/v1/auth/register",
         currentUser
       );
 
@@ -167,7 +167,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/login",
+        `${process.env.SERVER_URL}/api/v1/auth/login`,
         currentUser
       );
 

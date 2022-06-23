@@ -2,7 +2,7 @@
   "name": "indeedify-fullstack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "build-client": "cd client && npm run build",
