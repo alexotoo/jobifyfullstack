@@ -80,7 +80,7 @@ const AppProvider = ({ children }) => {
 
   //axios http setup
   const authHTTPfetch = axios.create({
-    baseURL: `${process.env.SERVER_URL}/api/v1`,
+    baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1`,
   });
 
   //with axios request
@@ -167,7 +167,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        `${process.env.SERVER_URL}/api/v1/auth/login`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/auth/login`,
         currentUser
       );
 
