@@ -59,7 +59,7 @@ const SaveJob = () => {
         <Text fontSize="4xl" fontWeight="bold">
           {isEditing ? "edit job" : "add job"}
         </Text>
-        <Flex gap="1rem">
+        <Flex gap="1rem" flexDir={{ base: "column", md: "row" }}>
           <FormRow
             type="text"
             name="position"
@@ -80,7 +80,7 @@ const SaveJob = () => {
             handleChange={handleJobInput}
           />
         </Flex>
-        <Flex gap="1rem" mt="1.5rem">
+        <Flex gap="1rem" mt="1.5rem" flexDir={{ base: "column", md: "row" }}>
           <FormRowOptions
             name="status"
             value={status}

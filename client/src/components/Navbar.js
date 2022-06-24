@@ -51,7 +51,7 @@ export default function Navbar() {
       boxShadow="lg"
       zIndex={"999"}
     >
-      <HStack>
+      <HStack display={{ base: "none", md: "block" }}>
         <Text fontSize="1.5rem" fontWeight="bold">
           Page: {router.pathname}
         </Text>
