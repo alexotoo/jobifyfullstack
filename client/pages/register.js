@@ -84,7 +84,7 @@ const Register = () => {
         maxW={"lg"}
         py={12}
         px={6}
-        color="color.600"
+        color="color.100"
       >
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>
@@ -124,34 +124,12 @@ const Register = () => {
                 value={values.password}
                 handleChange={handleChange}
               />
-
-              {!values.isMember && (
-                <FormRow
-                  labelText="Confirm Password"
-                  name="confirmPassword"
-                  type="password"
-                  value={values.confirmPassword}
-                  handleChange={handleChange}
-                />
-              )}
-
-              <Stack spacing={10}>
-                <Stack
-                  direction={{ base: "column", sm: "row" }}
-                  align={"start"}
-                  justify={"space-between"}
-                >
-                  <Checkbox>Remember me</Checkbox>
-                  <Link color="color.700">Forgot password?</Link>
-                </Stack>
-
+              <Stack spacing={2}>
                 <Button
-                  bg="color.600"
+                  bg={"color.200"}
+                  _hover={{ bg: "color.100", textDecoration: "none" }}
                   color={"white"}
                   disabled={isLoading}
-                  _hover={{
-                    bg: "color.700",
-                  }}
                   type="submit"
                 >
                   Submit
@@ -175,7 +153,6 @@ const Register = () => {
           </form>
         </Box>
       </Stack>
-      {/* {isLoggedIn === false ? <Register /> : <Login />} */}
     </Flex>
   );
 };

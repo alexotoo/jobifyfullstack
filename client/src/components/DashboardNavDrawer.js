@@ -8,12 +8,10 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Portal,
   useDisclosure,
   Button,
   Center,
 } from "@chakra-ui/react";
-import NavItem from "./NavItem";
 import NavItemBox from "./NavItemBox";
 
 const DashboardNavDrawer = () => {
@@ -22,7 +20,13 @@ const DashboardNavDrawer = () => {
 
   return (
     <>
-      <Button ref={btnRef} bg="color.200" onClick={onOpen}>
+      <Button
+        ref={btnRef}
+        bg={"color.200"}
+        _hover={{ bg: "color.100", textDecoration: "none" }}
+        color={"white"}
+        onClick={onOpen}
+      >
         <Center>
           <IoReorderThreeOutline />
         </Center>

@@ -17,6 +17,7 @@ import {
   Img,
   Link,
   useBreakpointValue,
+  color,
 } from "@chakra-ui/react";
 
 export default function Home() {
@@ -74,21 +75,18 @@ export default function Home() {
             </Text>
             <Stack spacing={6} direction={"row"}>
               <NextLink href={"/register"} passHref>
-                <Link passHref>
+                <Link _hover={{ textDecoration: "none" }} passHref>
                   <Button
                     rounded={"full"}
                     color="white"
                     px={6}
-                    bg={"color.600"}
-                    _hover={{ bg: "color.700", textDecoration: "none" }}
+                    bg={"color.200"}
+                    _hover={{ bg: "color.100", textDecoration: "none" }}
                   >
-                    Login/Register
+                    Login / Register
                   </Button>
                 </Link>
               </NextLink>
-              <Button rounded={"full"} px={6}>
-                Learn more
-              </Button>
             </Stack>
           </Stack>
           <Image alt="girl serching job" src={hero} />

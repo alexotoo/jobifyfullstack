@@ -18,20 +18,14 @@ function DashboardLayout({ children }) {
   }, [user]);
 
   if (!user && isLogedIn) {
-    console.log("object");
     router.push("/");
-    // setTimeout(() => {
-    //   router.push("/register");
-    // }, 3000);
-
-    // return <div>not login yet </div>;
   }
 
   return (
     <div>
       {user && (
         <Flex minH="100vh" bg="color.800">
-          <Box minW="25%">
+          <Box minW="25%" display={{ base: "none", md: "block" }}>
             <NavItemBox position={"fixed"} />
           </Box>
 

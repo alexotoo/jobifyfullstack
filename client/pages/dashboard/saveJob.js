@@ -99,11 +99,9 @@ const SaveJob = () => {
           <Flex gap="1rem" flexBasis="100%">
             <Button
               mt="2rem"
-              bg="color.600"
-              color={"white"}
-              _hover={{
-                bg: "color.700",
-              }}
+              color="color.900"
+              bg={"color.200"}
+              _hover={{ bg: "color.100", textDecoration: "none" }}
               flexBasis="100%"
               onClick={handleSubmit}
               isLoading={isLoading}

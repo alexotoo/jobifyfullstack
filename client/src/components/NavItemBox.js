@@ -24,18 +24,23 @@ const NavItemBox = ({ position }) => {
           <Image alt="logo" src={logo} width="150px" height={"50%"} />
         </Center>
       </Box>
+
       <NavItem text="Stats" icon={<IoBarChartSharp />} url="/dashboard/stats" />
+      <Spacer />
       <NavItem
         text="All Jobs"
         icon={<IoSearchCircleSharp />}
         url="/dashboard/jobs"
       />
+      <Spacer />
       <NavItem text="Add Job" icon={<IoSaveSharp />} url="/dashboard/saveJob" />
+      <Spacer />
       <NavItem
         text="Profile"
         icon={<IoPersonSharp />}
         url="/dashboard/profile"
       />
+      <Spacer />
     </VStack>
   );
 };

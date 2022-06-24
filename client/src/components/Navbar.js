@@ -40,7 +40,7 @@ export default function Navbar() {
       px={4}
       borderRadius={"10px"}
       position="fixed"
-      w="70%"
+      w={{ base: "91%", md: "70%" }}
       my={"20px"}
       h="6rem"
       padding="10px"
@@ -49,6 +49,7 @@ export default function Navbar() {
       justifyContent={"space-between"}
       alignItems="center"
       boxShadow="lg"
+      zIndex={"999"}
     >
       <HStack>
         <Text fontSize="1.5rem" fontWeight="bold">
@@ -73,11 +74,6 @@ export default function Navbar() {
             >
               <MenuItem>My Account</MenuItem>
               <MenuItem onClick={logoutUser}>Log out </MenuItem>
-            </MenuGroup>
-            <MenuDivider />
-            <MenuGroup title="Help">
-              <MenuItem>Docs</MenuItem>
-              <MenuItem>FAQ</MenuItem>
             </MenuGroup>
           </MenuList>
         </Menu>

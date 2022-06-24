@@ -52,7 +52,9 @@ const JobCard = ({
 
           <VStack lineHeight="15px" textTransform="capitalize">
             <Text fontWeight="bold">{position}</Text>
-            <Text fontWeight="light">{company}</Text>
+            <Text color="color.600" fontWeight="light">
+              {company}
+            </Text>
           </VStack>
         </HStack>
       </Box>

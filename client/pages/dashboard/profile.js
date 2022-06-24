@@ -71,11 +71,9 @@ const Profile = () => {
           <Button
             mt="2rem"
             w="30%"
-            bg="color.600"
-            color={"white"}
-            _hover={{
-              bg: "color.700",
-            }}
+            color="color.900"
+            bg={"color.200"}
+            _hover={{ bg: "color.100", textDecoration: "none" }}
             type="submit"
             isLoading={isLoading}
           >
