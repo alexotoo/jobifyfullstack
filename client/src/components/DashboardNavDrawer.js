@@ -37,8 +37,8 @@ const DashboardNavDrawer = () => {
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay />
-        <DrawerContent bg="color.800">
+        <DrawerOverlay minH={"100%"} />
+        <DrawerContent bg="color.800" minH={"100%"}>
           <DrawerCloseButton />
           <DrawerHeader></DrawerHeader>
 

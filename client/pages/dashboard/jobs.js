@@ -7,7 +7,7 @@ import SearchContainer from "../../src/components/SearchContainer";
 
 function Jobs({ data }) {
   return (
-    <Flex w="100%" flexDirection="column">
+    <Flex flexDirection="column">
       <SearchContainer />
       <JobsContainer />
     </Flex>

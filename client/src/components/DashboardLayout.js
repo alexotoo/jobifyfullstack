@@ -9,8 +9,7 @@ import { useAppContext } from "../context/contextApp";
 
 function DashboardLayout({ children }) {
   const [isLogedIn, setIsLoggedIn] = useState(false);
-  const { isLoading, showAlert, displayAlert, registerUser, user, loginUser } =
-    useAppContext();
+  const { user } = useAppContext();
   const router = useRouter();
 
   useEffect(() => {

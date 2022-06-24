@@ -38,7 +38,7 @@ const Profile = () => {
         <Text fontSize="4xl" fontWeight="bold">
           Profile
         </Text>
-        <Flex gap="1rem">
+        <Flex gap="1rem" flexDir={{ base: "column", md: "row" }}>
           <FormRow
             labelText="Name"
             name="name"
@@ -60,17 +60,18 @@ const Profile = () => {
             handleChange={(e) => setEmail(e.target.value)}
           />
         </Flex>
-        <Flex gap="1rem" mt="1.5rem">
+        <Flex gap="1rem" mt="1.5rem" flexDir={{ base: "column", md: "row" }}>
           <FormRow
             name="location"
             type="text"
             value={location}
             handleChange={(e) => setLocation(e.target.value)}
-            w="43.3%"
+            // w="43.3%"
+            w={{ base: "100%", md: "43.3%" }}
           />
           <Button
             mt="2rem"
-            w="30%"
+            w={{ base: "100%", md: "30%" }}
             color="color.900"
             bg={"color.200"}
             _hover={{ bg: "color.100", textDecoration: "none" }}

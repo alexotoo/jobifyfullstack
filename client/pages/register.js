@@ -31,12 +31,9 @@ const initialState = {
 const Register = () => {
   const router = useRouter();
   const [values, setValues] = useState(initialState);
-  const [labelTitle, setLabelTitle] = useState("");
 
   const { isLoading, showAlert, displayAlert, registerUser, user, loginUser } =
     useAppContext();
-
-  console.log(user, isLoading, showAlert);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
