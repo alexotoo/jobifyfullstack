@@ -10,7 +10,11 @@ Node Js, Express Js
 
 ### Database: 
 Mongo DB, Mongoose
-Deployments : Heroku and Vercel  
+Deployments : Heroku and Vercel
+
+### Deployments : 
+Heroku and Vercel
+
 
 You can create your own account and enjoy the app or log in as demonstration with 
 User name: tester@mail.com
