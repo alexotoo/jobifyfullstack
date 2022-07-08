@@ -16,7 +16,7 @@ Deployments : Heroku and Vercel
 Heroku and Vercel
 
 
-You can create your own account and enjoy the app or log in as demonstration with 
+You can create your own account and enjoy the app or log in as demonstration user with 
 User name: tester@mail.com
 Password: 12345678
 
