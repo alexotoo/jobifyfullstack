@@ -16,8 +16,6 @@ import {
   IconProps,
   Img,
   Link,
-  useBreakpointValue,
-  color,
 } from "@chakra-ui/react";
 
 export default function Home() {

@@ -3,17 +3,11 @@ import { useRouter } from "next/router";
 import {
   Flex,
   Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Checkbox,
   Stack,
-  Link,
   Button,
   Heading,
   Text,
   useColorModeValue,
-  color,
   Center,
 } from "@chakra-ui/react";
 import FormRow from "../src/components/FormRow";
@@ -24,7 +18,6 @@ const initialState = {
   name: "",
   email: "",
   password: "",
-  confirmPassword: "",
   isMember: false,
 };
 //app starts here
@@ -42,12 +35,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, password, confirmPassword, isMember } = values;
-    if (
-      !email ||
-      !password ||
-      (!isMember && !name) ||
-      (!isMember && !confirmPassword)
-    ) {
+    if (!email || !password || (!isMember && !name)) {
       displayAlert();
       return;
     }
