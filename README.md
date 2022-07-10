@@ -10,7 +10,6 @@ Node Js, Express Js
 
 ### Database: 
 Mongo DB, Mongoose
-Deployments : Heroku and Vercel
 
 ### Deployments : 
 Heroku and Vercel
