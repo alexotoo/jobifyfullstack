@@ -80,7 +80,7 @@ const AppProvider = ({ children }) => {
 
   //axios http setup
   const authHTTPfetch = axios.create({
-    baseURL: "https://workappusa.herokuapp.com/api/v1",
+    baseURL: "https://job101search.onrender.com/api/v1",
   });
 
   //with axios request
