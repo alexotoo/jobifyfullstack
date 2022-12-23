@@ -143,7 +143,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "https://workappusa.herokuapp.com/api/v1/auth/register",
+        "https://job101search.onrender.com/api/v1/auth/register",
         currentUser
       );
 
@@ -167,7 +167,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "https://workappusa.herokuapp.com/api/v1/auth/login",
+        "https://job101search.onrender.com/api/v1/auth/login",
         currentUser
       );
 
