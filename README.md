@@ -1,7 +1,7 @@
 # jobifyfullstack
 
 ### credit!!
-this project was originally done by [John Smilga](https://github.com/john-smilga) on his Udemy MERN stack course.
+this project is my MEARN stack project on Udemy by [John Smilga](https://github.com/john-smilga) on his Udemy MERN stack course.
 What I did was to update myself with the MERN stack and also make changes to some of the backend codes and totally change the front-end code.
 
 ### Project objective: 
