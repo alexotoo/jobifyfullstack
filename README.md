@@ -1,7 +1,7 @@
 # jobifyfullstack
 
 ### Project objective: 
-develop a Full stack job hunt application tracker to help job seekers keep track of the status of their job applications.
+The opjective of this application is to have a Fullstack job hunt application tracker to help job seekers keep track of the status of their job applications.
 The Application has a backend REST API created with node.js and Express.js framework which sends JSON response from its end-points to the frontend over HTTP request.
 
 ### Front-end Stack: 
