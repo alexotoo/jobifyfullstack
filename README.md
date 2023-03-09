@@ -1,16 +1,12 @@
 # jobifyfullstack
 
-### credit!!
-this project is my MERN stack project on Udemy by [John Smilga](https://github.com/john-smilga) on his Udemy MERN stack course.
-What I did was to update myself with the MERN stack and also make changes to some of the backend codes and totally change the front-end code.
-
 ### Project objective: 
 develop a Full stack job hunt application tracker to help job seekers keep track of the status of their job applications.
 
 ### Front-end Stack: 
 Next Js, Chakra UI, SASS, Axios, 
 
-### Back-end Stack: 
+### Back-end REST API Stack: 
 Node Js, Express Js
 
 ### Database: 
