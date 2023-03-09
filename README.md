@@ -1,4 +1,9 @@
 # jobifyfullstack
+### [live project](https://jobsapps.vercel.app/)
+
+You can create your own account and enjoy the app or log in as demonstration user with 
+User name: tester@mail.com
+Password: 12345678
 
 ### Project objective: 
 The opjective of this application is to have a Fullstack job hunt application tracker to help job seekers keep track of the status of their job applications.
@@ -16,9 +21,5 @@ Mongo DB, Mongoose
 ### Deployments : 
 Heroku and Vercel
 
-### [live project](https://jobsapps.vercel.app/)
 
-You can create your own account and enjoy the app or log in as demonstration user with 
-User name: tester@mail.com
-Password: 12345678
 
